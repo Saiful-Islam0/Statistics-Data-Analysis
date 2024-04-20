@@ -1,1 +1,799 @@
+Q.1 At what age did you first see pornography?
 
+import matplotlib.pyplot as plt
+data = [
+    "Age 11-14", "Age 11-14", "Age 18 or older", "Age 15-17", "Age 11-14", 
+    "Age 15-17", "Age 15-17", "Age 11-14", "Age 15-17", "Age 15-17", 
+    "Age 15-17", "Age 11-14", "Age 11-14", "Age 11-14", "Age 10 or younger", 
+    "Age 11-14", "Age 11-14", "Never", "Age 18 or older", "Age 18 or older", 
+    "Age 15-17", "Age 15-17", "Age 11-14", "Never", "Age 15-17", "Age 11-14", 
+    "Age 18 or older", "Never", "Age 18 or older", "Age 18 or older", 
+    "Age 15-17", "Age 15-17", "Age 11-14", "Age 11-14", "Age 15-17", 
+    "Age 11-14", "Age 10 or younger", "Age 10 or younger", "Age 15-17", 
+    "Age 15-17", "Age 15-17", "Never", "Age 15-17", "Age 11-14", "Age 11-14", 
+    "Never", "Age 15-17", "Age 15-17", "Age 18 or older", "Never", 
+    "Age 18 or older", "Age 15-17", "Age 18 or older", "Never", "Never", 
+    "Age 18 or older", "Age 11-14", "Age 11-14", "Never", "Never", 
+    "Age 15-17", "Age 15-17", "Never", "Age 11-14", "Age 11-14", "Never", 
+    "Never", "Age 18 or older", "Age 11-14", "Age 11-14", "Age 18 or older", 
+    "Never", "Age 18 or older", "Age 15-17", "Age 15-17", "Never", 
+    "Age 15-17", "Age 15-17", "Age 18 or older", "Age 18 or older", 
+    "Age 11-14", "Age 11-14", "Age 15-17", "Age 11-14", "Age 18 or older", 
+    "Age 15-17", "Age 15-17", "Age 15-17", "Age 11-14", "Never", 
+    "Age 11-14", "Age 11-14", "Age 15-17", "Age 15-17", "Age 15-17", 
+    "Age 11-14", "Age 11-14", "Never", "Age 11-14", "Age 18 or older", 
+    "Age 15-17", "Age 15-17", "Age 11-14", "Age 11-14", "Never", 
+    "Age 18 or older", "Never", "Age 18 or older", "Never", "Age 15-17", 
+    "Age 15-17", "Never", "Age 15-17", "Age 18 or older", "Age 15-17", 
+    "Never", "Age 15-17", "Age 10 or younger", "Never", "Age 11-14", 
+    "Never", "Age 11-14", "Age 15-17", "Age 10 or younger", "Age 15-17", 
+    "Age 15-17", "Age 15-17", "Age 10 or younger", "Never", "Age 10 or younger", 
+    "Age 11-14", "Age 11-14", "Age 18 or older", "Age 18 or older", 
+    "Age 15-17", "Age 18 or older", "Never", "Never", "Age 15-17", 
+    "Age 15-17", "Age 15-17", "Age 18 or older", "Age 15-17", "Age 15-17", 
+    "Age 15-17", "Age 15-17", "Age 15-17", "Never", "Never", "Age 15-17", 
+    "Age 11-14", "Age 11-14", "Age 11-14", "Age 15-17", "Never", "Never", 
+    "Age 10 or younger", "Age 18 or older", "Age 15-17", "Age 11-14", 
+    "Age 15-17", "Age 15-17", "Never", "Age 18 or older"
+]
+
+age_groups = {}
+for age in data:
+    if age in age_groups:
+        age_groups[age] += 1
+    else:
+        age_groups[age] = 1
+sorted_age_groups = dict(sorted(age_groups.items()))
+labels = list(sorted_age_groups.keys())
+values = list(sorted_age_groups.values())
+
+plt.figure(figsize=(10, 6))
+plt.bar(labels, values, color='skyblue')
+plt.xlabel('Age Groups')
+plt.ylabel('Frequency')
+plt.title('Histogram of Age Groups when First Seeing Pornography')
+plt.xticks(rotation=45, ha='right')
+plt.tight_layout()
+plt.show()
+
+Q.2 Have you ever been a victim of sexual harassment?	If yes, then by whom?
+
+import matplotlib.pyplot as plt
+data = [
+    "No", "No", "No", "Yes Stranger in a public place", "No", "No", "No", "No", "No",
+    "Yes Relative", "No", "Yes Stranger in a public place", "No", "No", "Yes Stranger in a public place",
+    "No", "No", "No", "No", "Yes Stranger in a public place", "No", "Yes Teacher", "No", "No",
+    "Yes Stranger in a public place", "No", "Yes", "No", "Yes Stranger in a public place",
+    "Yes Stranger in a public place", "No", "Yes Relative", "No", "No", "Yes Relative", "No", "No", "No",
+    "Yes Stranger in a public place", "No", "Yes Relative", "Yes Relative, Teacher, Stranger in a public place",
+    "No", "No", "No", "Yes Friend, Stranger in a public place", "Yes Stranger in a public place", "No", "No", "No",
+    "Yes Stranger in a public place", "No", "No", "Yes Stranger in a public place", "Yes Friend, Teacher", "No",
+    "No", "No", "No", "No", "No", "No", "No", "Yes Stranger in a public place", "No", "No", "No", "Yes Teacher",
+    "No", "Yes Relative", "No", "No", "Yes Stranger in a public place", "No", "No", "No", "Yes Stranger in a public place",
+    "Yes Teacher", "No", "Yes Relative", "No", "Yes", "No", "Yes Teacher", "No", "No", "Yes Relative", "No", "No",
+    "Yes Stranger in a public place", "No", "No", "No", "Yes", "No", "No", "No", "No", "No", "No", "Yes Relative",
+    "Yes Stranger in a public place", "Yes Stranger in a public place", "No", "No", "Yes Family member",
+    "Yes Stranger in a public place", "Yes Relative", "No", "No", "Yes Teacher", "No", "No", "No", "No", "Yes Relative",
+    "Yes Stranger in a public place", "No", "No", "No", "No", "Yes Relative", "No", "No", "No", "No", "Yes Teacher",
+    "No", "Yes Relative", "No", "No", "No", "No", "No", "No", "Yes Relative", "Yes Friend", "No", "No", "No", "No",
+    "No", "No", "Yes", "No", "No", "No", "No", "No", "Yes Stranger in a public place", "Yes Relative", "No", "No",
+    "No", "No", "No", "No", "Yes Stranger in a public place", "No", "No", "Yes Stranger in a public place", "No",
+    "Yes Stranger in a public place", "No", "No"
+]
+categories = {}
+for entry in data:
+    if "Yes" in entry:
+        parts = entry.split("Yes")[1].strip().split(",")
+        for part in parts:
+            key = part.strip()
+            if key in categories:
+                categories[key] += 1
+            else:
+                categories[key] = 1
+
+
+labels = list(categories.keys())
+values = list(categories.values())
+
+plt.figure(figsize=(10, 5))
+plt.bar(labels, values, color='skyblue')
+plt.xlabel('Category of Harasser')
+plt.ylabel('Number of Responses')
+plt.title('Histogram of Harassment by Category')
+plt.xticks(rotation=45)
+plt.show()
+
+plt.figure(figsize=(8, 8))
+plt.pie(values, labels=labels, autopct='%1.1f%%', colors=plt.cm.Paired(range(len(values))))
+plt.title('Pie Chart of Harassment by Category')
+plt.show()
+
+Q.3 How frequently do you watch pornography?
+import matplotlib.pyplot as plt
+data = [
+    "Occasionally", "Never", "Never", "Occasionally", "Occasionally", "Occasionally", "Never", "Occasionally", "Monthly",
+    "Occasionally", "Never", "Occasionally", "Occasionally", "Weekly", "Never", "Occasionally", "Occasionally", "Never",
+    "Never", "Never", "Never", "Never", "Weekly", "Never", "Occasionally", "Daily", "Never", "Never", "Never", "Never",
+    "Weekly", "Occasionally", "Occasionally", "Weekly", "Occasionally", "Occasionally", "Daily", "Occasionally",
+    "Occasionally", "Occasionally", "Occasionally", "Never", "Occasionally", "Occasionally", "Weekly", "Never", "Weekly",
+    "Never", "Occasionally", "Never", "Weekly", "Never", "Never", "Never", "Never", "Occasionally", "Never",
+    "Occasionally", "Never", "Never", "Monthly", "Occasionally", "Never", "Weekly", "Weekly", "Never", "Never", "Never",
+    "Never", "Occasionally", "Weekly", "Never", "Occasionally", "Never", "Occasionally", "Never", "Occasionally",
+    "Occasionally", "Never", "Never", "Occasionally", "Never", "Occasionally", "Weekly", "Never", "Occasionally",
+    "Weekly", "Weekly", "Occasionally", "Never", "Never", "Occasionally", "Weekly", "Occasionally", "Never",
+    "Occasionally", "Monthly", "Never", "Never", "Never", "Never", "Occasionally", "Occasionally", "Never", "Never",
+    "Occasionally", "Never", "Never", "Never", "Occasionally", "Occasionally", "Never", "Never", "Never",
+    "Occasionally", "Never", "Never", "Never", "Never", "Weekly", "Never", "Daily", "Occasionally", "Monthly", "Never",
+    "Occasionally", "Never", "Daily", "Never", "Never", "Occasionally", "Occasionally", "Never", "Never", "Monthly",
+    "Monthly", "Never", "Never", "Occasionally", "Never", "Occasionally", "Never", "Occasionally", "Occasionally",
+    "Occasionally", "Occasionally", "Occasionally", "Never", "Never", "Occasionally", "Occasionally", "Daily", "Never",
+    "Monthly", "Never", "Never", "Weekly", "Occasionally", "Occasionally", "Occasionally", "Weekly", "Occasionally",
+    "Never", "Occasionally"
+]
+frequency_counts = Counter(data)
+
+labels = list(frequency_counts.keys())
+values = list(frequency_counts.values())
+colors = ['lightblue', 'lightgreen', 'lightcoral', 'lightskyblue']  # Different colors for each category
+
+plt.figure(figsize=(10, 5))
+plt.bar(labels, values, color=colors)
+plt.xlabel('Frequency of Watching Pornography')
+plt.ylabel('Number of Responses')
+plt.title('Histogram of Pornography Watching Frequency')
+plt.xticks(rotation=45)
+plt.show()
+
+plt.figure(figsize=(8, 8))
+plt.pie(values, labels=labels, autopct='%1.1f%%', colors=colors)
+plt.title('Pie Chart of Pornography Watching Frequency')
+plt.show()
+
+Q.4 Which age group do you think is more addicted to pornography?
+import matplotlib.pyplot as plt
+from collections import Counter
+data = [
+    "Adolescents (13-17)",
+    "Adolescents (13-17)",
+    "Adolescents (13-17)",
+    "Adolescents (13-17)",
+    "Adolescents (13-17)",
+    "Adolescents (13-17)",
+    "Young adults (18-25)",
+    "Adolescents (13-17)",
+    "Adolescents (13-17)",
+    "Adults (26-40)",
+    "Adolescents (13-17)",
+    "Young adults (18-25)",
+    "Adolescents (13-17)",
+    "Young adults (18-25)",
+    "Young adults (18-25)",
+    "Adolescents (13-17)",
+    "Adolescents (13-17)",
+    "Adolescents (13-17)",
+    "Adolescents (13-17)",
+    "Adolescents (13-17)",
+    "No significant difference",
+    "Young adults (18-25)",
+    "Adolescents (13-17)",
+    "Young adults (18-25)",
+    "Young adults (18-25)",
+    "Adolescents (13-17)",
+    "Young adults (18-25)",
+    "Older adults (40+)",
+    "Young adults (18-25)",
+    "Adolescents (13-17)",
+    "Young adults (18-25)",
+    "Adolescents (13-17)",
+    "Young adults (18-25)",
+    "No significant difference",
+    "Adolescents (13-17)",
+    "Adolescents (13-17)",
+    "Young adults (18-25)",
+    "Adolescents (13-17)",
+    "Adolescents (13-17)",
+    "Young adults (18-25)",
+    "Adolescents (13-17)",
+    "No significant difference",
+    "Young adults (18-25)",
+    "Young adults (18-25)",
+    "Adolescents (13-17)",
+    "Young adults (18-25)",
+    "Adolescents (13-17)",
+    "Adolescents (13-17)",
+    "Young adults (18-25)",
+    "Young adults (18-25)",
+    "Adolescents (13-17)",
+    "Adolescents (13-17)",
+    "Adolescents (13-17)",
+    "Adolescents (13-17)",
+    "Young adults (18-25)",
+    "Adolescents (13-17)",
+    "Adolescents (13-17)",
+    "Young adults (18-25)",
+    "Young adults (18-25)",
+    "Adolescents (13-17)",
+    "Adolescents (13-17)",
+    "Adolescents (13-17)",
+    "Adolescents (13-17)",
+    "Young adults (18-25)",
+    "Adolescents (13-17)",
+    "Young adults (18-25)",
+    "Young adults (18-25)",
+    "No significant difference",
+    "No significant difference",
+    "Adolescents (13-17)",
+    "Young adults (18-25)",
+    "Adolescents (13-17)",
+    "Young adults (18-25)",
+    "Adolescents (13-17)",
+    "Adolescents (13-17)",
+    "No significant difference",
+    "Young adults (18-25)",
+    "Young adults (18-25)",
+    "No significant difference",
+    "Young adults (18-25)",
+    "Adolescents (13-17)",
+    "Young adults (18-25)",
+    "Young adults (18-25)",
+    "Adolescents (13-17)",
+    "Adolescents (13-17)",
+    "No significant difference",
+    "Young adults (18-25)",
+    "Young adults (18-25)",
+    "Adolescents (13-17)",
+    "No significant difference",
+    "Adolescents (13-17)",
+    "Adolescents (13-17)",
+    "Young adults (18-25)",
+    "Adolescents (13-17)",
+    "No significant difference",
+    "Adolescents (13-17)",
+    "Adolescents (13-17)",
+    "No significant difference",
+    "Adolescents (13-17)",
+    "Young adults (18-25)",
+    "Adolescents (13-17)",
+    "Young adults (18-25)",
+    "Adolescents (13-17)",
+    "Adolescents (13-17)",
+    "Adolescents (13-17)",
+    "Adolescents (13-17)",
+    "No significant difference",
+    "No significant difference",
+    "Adolescents (13-17)",
+    "Young adults (18-25)",
+    "Young adults (18-25)",
+    "No significant difference",
+    "Adolescents (13-17)",
+    "No significant difference",
+    "Young adults (18-25)",
+    "Young adults (18-25)",
+    "Adolescents (13-17)",
+    "Adolescents (13-17)",
+    "Adolescents (13-17)",
+    "Adolescents (13-17)",
+    "Adolescents (13-17)",
+    "No significant difference",
+    "Adolescents (13-17)",
+    "Adolescents (13-17)",
+    "Adolescents (13-17)",
+    "Adolescents (13-17)",
+    "Young adults (18-25)",
+    "No significant difference",
+    "Young adults (18-25)",
+    "Adolescents (13-17)",
+    "Young adults (18-25)",
+    "Adolescents (13-17)",
+    "Adolescents (13-17)",
+    "Young adults (18-25)",
+    "Young adults (18-25)",
+    "Young adults (18-25)",
+    "Adolescents (13-17)",
+    "Adolescents (13-17)",
+    "Young adults (18-25)",
+    "Young adults (18-25)",
+    "No significant difference",
+    "Adolescents (13-17)",
+    "No significant difference",
+    "Adolescents (13-17)",
+    "Young adults (18-25)",
+    "Adolescents (13-17)",
+    "Adolescents (13-17)",
+]
+
+group_counts = Counter(data)
+
+sorted_groups = sorted(group_counts.items(), key=lambda x: x[0])
+
+labels = [item[0] for item in sorted_groups]
+counts = [item[1] for item in sorted_groups]
+
+plt.figure(figsize=(10, 6))
+plt.bar(labels, counts, color=['blue', 'green', 'orange', 'red', 'purple'])
+plt.title("Histogram of Age Groups Addicted to Pornography")
+plt.xlabel("Age Groups")
+plt.ylabel("Frequency")
+plt.xticks(rotation=45, ha='right')
+plt.tight_layout()
+plt.show()
+
+
+Q.5 Have you ever felt guilty or ashamed after consuming pornography?
+
+import matplotlib.pyplot as plt
+
+data = [
+    "Yes", "Yes", "Yes", "Yes", "Yes", "Yes", "Yes", "Yes", "Yes", "Yes", 
+    "Yes", "Yes", "Yes", "Yes", "No", "Yes", "Yes", "No", "No", "Yes", 
+    "Yes", "Yes", "Yes", "Yes", "Yes", "Yes", "Yes", "No", "Yes", "Yes", 
+    "Yes", "Yes", "Yes", "No", "Yes", "Yes", "No", "No", "Yes", "No", 
+    "Yes", "Yes", "Yes", "Yes", "Yes", "No", "Yes", "No", "Yes", "No", 
+    "Yes", "Yes", "Yes", "Yes", "No", "Yes", "No", "Yes", "No", "Yes", 
+    "Yes", "Yes", "Yes", "No", "Yes", "No", "Yes", "Yes", "No", "Yes", 
+    "Yes", "No", "Yes", "Yes", "Yes", "No", "Yes", "Yes", "No", "Yes", 
+    "No", "Yes", "Yes", "Yes", "Yes", "No", "No", "Yes", "Yes", "Yes", 
+    "Yes", "Yes", "Yes", "Yes", "Yes", "Yes", "Yes", "No", "Yes", "Yes", 
+    "Yes", "Yes", "Yes", "Yes", "Yes", "Yes", "Yes", "Yes", "Yes", "Yes", 
+    "Yes", "Yes", "Yes", "No", "Yes", "Yes", "Yes", "Yes", "Yes", "Yes", 
+    "Yes", "Yes", "Yes", "Yes", "Yes", "Yes", "Yes", "Yes", "Yes", "Yes", 
+    "Yes", "Yes", "Yes", "Yes", "Yes", "Yes", "Yes", "Yes", "Yes", "Yes", 
+    "Yes", "Yes", "Yes", "No", "Yes", "Yes", "No", "Yes", "Yes", "No", 
+    "Yes", "Yes", "Yes", "Yes", "Yes", "Yes", "No", "No", "Yes", "Yes", 
+    "Yes", "Yes", "Yes", "Yes", "Yes", "Yes", "Yes", "Yes", "Yes", "Yes", 
+    "Yes", "Yes", "Yes", "No", "Yes", "Yes", "Yes", "Yes", "Yes", "Yes", 
+    "No", "Yes", "Yes", "Yes", "No", "Yes", "Yes", "Yes", "Yes", "Yes", 
+    "Yes", "Yes", "Yes", "Yes", "Yes", "Yes", "Yes", "Yes", "Yes", "Yes", 
+    "Yes", "No", "Yes", "Yes", "Yes", "Yes", "Yes", "Yes", "Yes", "Yes"
+]
+feeling_counts = {"Yes": 0, "No": 0}
+for feeling in data:
+    if feeling == "Yes":
+        feeling_counts["Yes"] += 1
+    else:
+        feeling_counts["No"] += 1
+
+labels = list(feeling_counts.keys())
+values = list(feeling_counts.values())
+
+colors = ['lightblue', 'lightgreen']
+plt.figure(figsize=(10, 6))
+plt.pie(values, labels=labels, colors=colors, autopct='%1.1f%%', startangle=140)
+plt.title('Pie Chart of Guilt or Shame after Consuming Pornography')
+plt.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
+plt.show()
+
+plt.figure(figsize=(10, 6))
+plt.hist(data, color=['lightblue', 'lightgreen'])
+plt.xlabel('Feeling after Consuming Pornography')
+plt.ylabel('Frequency')
+plt.title('Histogram of Guilt or Shame after Consuming Pornography')
+plt.xticks(rotation=45, ha='right')
+plt.tight_layout()
+plt.show()
+
+Q.6  Which age group do you think is more addicted to pornography?
+
+import matplotlib.pyplot as plt
+data = [
+    "Men", "Both", "Both", "Men", "Both", "Men", "No significant difference", 
+    "Both", "Men", "Men", "Both", "Both", "Both", "Both", "Men", "Men", 
+    "Both", "Both", "Both", "Men", "Men", "Men", "Men", "Men", 
+    "No significant difference", "No significant difference", "Men", "Men", 
+    "Men", "Both", "Both", "Both", "Both", "Men", "Both", "Men", "Both", 
+    "Both", "Men", "Men", "Both", "Men", "Men", "Men", "Both", "Men", 
+    "Both", "Both", "Both", "Both", "Both", "Men", "No significant difference", 
+    "Men", "Both", "Men", "Both", "Men", "Men", "No significant difference", 
+    "Both", "Both", "Men", "Both", "Men", "Both", "Men", "Both", 
+    "No significant difference", "Both", "Both", "Men", "Both", "Both", 
+    "Men", "Both", "Men", "Men", "Both", "Both", "Men", "Both", "Both", 
+    "No significant difference", "Both", "Men", "Both", "Both", "Women", 
+    "Both", "Both", "Both", "Men", "Both", "No significant difference", 
+    "Men", "Both", "No significant difference", "Both", "Both", 
+    "No significant difference", "Men", "Women", "Both", "Men", "Men", 
+    "Men", "Men", "Both", "Both", "Men", "No significant difference", 
+    "Men", "No significant difference", "Both", "Men", "Men", "Men", 
+    "Men", "Men", "Men", "Men", "Men", "Men", "Both", "No significant difference", 
+    "Both", "Men", "Men", "Men", "Women", "Both", "No significant difference", 
+    "Both", "Both", "Both", "Men", "Men", "No significant difference", 
+    "Men", "Both", "Both", "Both", "Both", "Both", "Both", "Men", "Both", 
+    "Men", "Both", "Men", "No significant difference", "Men", "Men", 
+    "Both", "Men", "Men", "No significant difference", "Men", 
+    "No significant difference", "No significant difference", "Men", "Men"
+]
+
+addiction_counts = {}
+for addiction in data:
+    if addiction in addiction_counts:
+        addiction_counts[addiction] += 1
+    else:
+        addiction_counts[addiction] = 1
+
+labels = list(addiction_counts.keys())
+values = list(addiction_counts.values())
+colors = ['lightblue', 'lightgreen', 'lightcoral', 'lightyellow', 'lightskyblue']
+
+plt.figure(figsize=(10, 6))
+plt.pie(values, labels=labels, colors=colors, autopct='%1.1f%%', startangle=140)
+plt.title('Pie Chart of Perceived Pornography Addiction')
+plt.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
+plt.show()
+
+plt.figure(figsize=(10, 6))
+plt.hist(data, color=colors)
+plt.xlabel('Perceived Addiction')
+plt.ylabel('Frequency')
+plt.title('Histogram of Perceived Pornography Addiction')
+plt.xticks(rotation=45, ha='right')
+plt.tight_layout()
+plt.show()
+
+Q.7 Do you think pornography promotes unrealistic expectations about sex and body structure?
+
+import matplotlib.pyplot as plt
+
+data = [
+    "Strongly Agree", "Agree", "Strongly Agree", "Strongly Agree", "Strongly Agree", 
+    "Strongly Agree", "Neutral", "Strongly Agree", "Strongly Agree", "Strongly Disagree", 
+    "Strongly Agree", "Strongly Agree", "Strongly Agree", "Strongly Agree", "Strongly Agree", 
+    "Strongly Agree", "Neutral", "Agree", "Strongly Agree", "Neutral", "Strongly Agree", 
+    "Agree", "Agree", "Agree", "Neutral", "Strongly Disagree", "Strongly Agree", "Neutral", 
+    "Strongly Agree", "Neutral", "Agree", "Strongly Agree", "Strongly Agree", "Strongly Agree", 
+    "Strongly Agree", "Agree", "Strongly Agree", "Strongly Agree", "Agree", "Agree", "Strongly Agree", 
+    "Neutral", "Strongly Agree", "Strongly Agree", "Strongly Agree", "Agree", "Strongly Agree", 
+    "Neutral", "Strongly Agree", "Disagree", "Neutral", "Strongly Agree", "Neutral", "Strongly Agree", 
+    "Strongly Agree", "Strongly Agree", "Strongly Agree", "Agree", "Agree", "Strongly Agree", 
+    "Agree", "Agree", "Strongly Agree", "Strongly Agree", "Agree", "Agree", "Agree", 
+    "Strongly Agree", "Neutral", "Agree", "Strongly Agree", "Agree", "Agree", "Agree", 
+    "Strongly Agree", "Neutral", "Strongly Agree", "Strongly Agree", "Strongly Agree", 
+    "Agree", "Strongly Agree", "Strongly Agree", "Agree", "Agree", "Strongly Agree", 
+    "Strongly Agree", "Agree", "Disagree", "Strongly Agree", "Agree", "Agree", "Agree", 
+    "Strongly Agree", "Neutral", "Strongly Agree", "Strongly Agree", "Agree", "Strongly Agree", 
+    "Strongly Agree", "Strongly Agree", "Strongly Agree", "Strongly Agree", "Strongly Agree", 
+    "Strongly Agree", "Strongly Agree", "Agree", "Agree", "Strongly Agree", "Neutral", 
+    "Strongly Agree", "Strongly Agree", "Neutral", "Agree", "Neutral", "Agree", "Agree", 
+    "Strongly Agree", "Strongly Agree", "Strongly Agree", "Strongly Agree", "Agree", 
+    "Neutral", "Strongly Agree", "Strongly Agree", "Strongly Agree", "Strongly Agree", 
+    "Agree", "Agree", "Strongly Agree", "Strongly Agree", "Strongly Agree", "Strongly Agree", 
+    "Agree", "Agree", "Strongly Agree", "Agree", "Agree", "Strongly Agree", "Agree", 
+    "Neutral", "Agree", "Neutral", "Strongly Agree", "Agree", "Strongly Agree", 
+    "Strongly Agree", "Neutral", "Agree", "Neutral", "Strongly Disagree", "Strongly Agree", 
+    "Agree", "Agree", "Agree", "Agree", "Agree", "Strongly Agree", "Neutral", "Agree", 
+    "Strongly Agree", "Strongly Agree", "Agree", "Neutral", "Strongly Agree"
+]
+expectations_counts = {}
+for expectation in data:
+    if expectation in expectations_counts:
+        expectations_counts[expectation] += 1
+    else:
+        expectations_counts[expectation] = 1
+
+labels = list(expectations_counts.keys())
+values = list(expectations_counts.values())
+
+colors = ['lightblue', 'lightgreen', 'lightcoral', 'lightyellow', 'lightskyblue']
+
+plt.figure(figsize=(10, 6))
+plt.pie(values, labels=labels, colors=colors, autopct='%1.1f%%', startangle=140)
+plt.title('Pie Chart of Unrealistic Expectations about Sex and Body Structure')
+plt.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
+plt.show()
+
+plt.figure(figsize=(10, 6))
+plt.hist(data, color=colors)
+plt.xlabel('Opinion about Pornography and Unrealistic Expectations')
+plt.ylabel('Frequency')
+plt.title('Histogram of Unrealistic Expectations about Sex and Body Structure')
+plt.xticks(rotation=45, ha='right')
+plt.tight_layout()
+plt.show()
+
+
+Q.8 Have you encountered any pornography depicting illegal or non-consensual acts?
+
+import matplotlib.pyplot as plt
+from collections import Counter
+
+data = [
+    "Yes", "No", "No", "No", "Yes", "No", "Yes", "Yes", "Yes", "No", "No", "Yes", "No", "No", "Yes", "Yes", "No", "No",
+    "No", "No", "Yes", "Yes", "Yes", "No", "Yes", "Yes", "Yes", "No", "No", "No", "No", "No", "No", "Yes", "Yes", "No",
+    "No", "No", "Yes", "No", "No", "No", "No", "Yes", "Yes", "No", "Yes", "No", "No", "No", "No", "Yes", "No", "No",
+    "No", "No", "Yes", "No", "No", "No", "No", "No", "Yes", "Yes", "No", "No", "No", "No", "No", "Yes", "No", "No",
+    "No", "Yes", "Yes", "No", "Yes", "No", "No", "No", "No", "No", "Yes", "No", "No", "Yes", "No", "No", "Yes", "No",
+    "No", "No", "Yes", "No", "Yes", "No", "No", "No", "No", "No", "No", "Yes", "Yes", "Yes", "Yes", "No", "No", "No",
+    "No", "Yes", "No", "No", "Yes", "No", "No", "No", "No", "No", "Yes", "No", "No", "Yes", "No", "No", "No", "Yes",
+    "No", "No", "No", "Yes", "Yes", "Yes", "No", "Yes", "No", "No", "No", "No", "No", "No", "No", "No", "No", "Yes",
+    "Yes", "Yes", "Yes", "No", "No", "Yes", "No", "Yes", "No", "No", "Yes", "No", "Yes", "No", "Yes", "No", "Yes",
+    "Yes", "No", "Yes"
+]
+frequency_counts = Counter(data)
+
+labels = list(frequency_counts.keys())
+values = list(frequency_counts.values())
+colors = ['lightcoral', 'lightblue']  # Different colors for each category
+
+plt.figure(figsize=(10, 5))
+plt.bar(labels, values, color=colors)
+plt.xlabel('Response')
+plt.ylabel('Number of Responses')
+plt.title('Histogram of Responses to Encountering Illegal or Non-consensual Acts in Pornography')
+plt.xticks(rotation=0)
+plt.show()
+
+plt.figure(figsize=(8, 8))
+plt.pie(values, labels=labels, autopct='%1.1f%%', colors=colors)
+plt.title('Pie Chart of Responses to Encountering Illegal or Non-consensual Acts in Pornography')
+plt.show()
+
+
+Q.9 Do you believe pornography contributes to unhealthy relationship dynamics (e.g., jealousy, unrealistic expectations, pressure to perform certain sexual acts)?
+
+import matplotlib.pyplot as plt
+from collections import Counter
+data = [
+    "Strongly Agree", "Strongly Agree", "Neutral", "Strongly Agree", "Strongly Agree", "Agree", "Agree", "Strongly Agree",
+    "Strongly Agree", "Neutral", "Strongly Agree", "Strongly Agree", "Strongly Agree", "Strongly Disagree", "Strongly Agree",
+    "Strongly Agree", "Disagree", "Strongly Agree", "Strongly Agree", "Agree", "Strongly Agree", "Strongly Agree", "Neutral",
+    "Strongly Agree", "Agree", "Neutral", "Agree", "Agree", "Strongly Agree", "Neutral", "Agree", "Strongly Agree", "Neutral",
+    "Strongly Agree", "Agree", "Agree", "Strongly Agree", "Neutral", "Strongly Agree", "Strongly Agree", "Strongly Agree",
+    "Neutral", "Strongly Agree", "Strongly Agree", "Strongly Agree", "Agree", "Strongly Agree", "Neutral", "Strongly Agree",
+    "Agree", "Agree", "Strongly Agree", "Neutral", "Strongly Agree", "Agree", "Strongly Agree", "Strongly Agree", "Agree",
+    "Neutral", "Strongly Agree", "Agree", "Agree", "Strongly Agree", "Strongly Agree", "Disagree", "Agree", "Strongly Agree",
+    "Strongly Agree", "Strongly Agree", "Agree", "Strongly Agree", "Agree", "Agree", "Strongly Agree", "Agree", "Agree",
+    "Strongly Agree", "Agree", "Strongly Agree", "Agree", "Agree", "Strongly Agree", "Strongly Agree", "Strongly Agree",
+    "Strongly Agree", "Strongly Agree", "Agree", "Disagree", "Agree", "Agree", "Agree", "Agree", "Strongly Agree",
+    "Strongly Agree", "Strongly Agree", "Strongly Disagree", "Agree", "Strongly Agree", "Strongly Agree", "Strongly Agree",
+    "Agree", "Strongly Agree", "Strongly Agree", "Strongly Agree", "Strongly Agree", "Agree", "Agree", "Agree", "Agree",
+    "Strongly Agree", "Strongly Agree", "Neutral", "Agree", "Neutral", "Agree", "Agree", "Strongly Agree", "Strongly Agree",
+    "Strongly Agree", "Strongly Agree", "Agree", "Agree", "Agree", "Strongly Agree", "Strongly Agree", "Strongly Agree",
+    "Agree", "Strongly Disagree", "Agree", "Strongly Agree", "Agree", "Agree", "Disagree", "Agree", "Agree", "Neutral",
+    "Agree", "Strongly Agree", "Strongly Agree", "Strongly Agree", "Agree", "Agree", "Agree", "Agree", "Strongly Agree",
+    "Agree", "Neutral", "Agree", "Neutral", "Strongly Agree", "Strongly Agree", "Agree", "Agree", "Agree", "Disagree",
+    "Neutral", "Strongly Agree", "Agree", "Agree", "Strongly Agree", "Strongly Agree", "Agree", "Agree", "Strongly Agree"
+]
+frequency_counts = Counter(data)
+
+labels = list(frequency_counts.keys())
+values = list(frequency_counts.values())
+colors = ['gold', 'lightgreen', 'lightcoral', 'lightskyblue']  # Different colors for each category
+
+plt.figure(figsize=(10, 5))
+plt.bar(labels, values, color=colors)
+plt.xlabel('Opinion on Pornography and Relationship Dynamics')
+plt.ylabel('Number of Responses')
+plt.title('Histogram of Opinions on Pornography and Relationship Dynamics')
+plt.xticks(rotation=45)
+plt.show()
+
+plt.figure(figsize=(8, 8))
+plt.pie(values, labels=labels, autopct='%1.1f%%', colors=colors)
+plt.title('Pie Chart of Opinions on Pornography and Relationship Dynamics')
+plt.show()
+
+
+Q.10 Do you think  the rate of rape of women and children in our country increased as a result of pornography?
+
+import matplotlib.pyplot as plt
+from collections import Counter
+data = [
+    "Strongly Agree", "Strongly Agree", "Neutral", "Strongly Agree", "Strongly Agree", "Agree", "Agree", "Strongly Agree",
+    "Neutral", "Strongly Disagree", "Agree", "Neutral", "Neutral", "Strongly Agree", "Strongly Agree", "Neutral", "Disagree",
+    "Agree", "Disagree", "Agree", "Strongly Agree", "Strongly Agree", "Neutral", "Strongly Agree", "Agree", "Neutral",
+    "Agree", "Agree", "Agree", "Agree", "Strongly Agree", "Agree", "Disagree", "Disagree", "Strongly Agree",
+    "Strongly Disagree", "Strongly Agree", "Neutral", "Agree", "Strongly Agree", "Strongly Agree", "Agree", "Strongly Agree",
+    "Strongly Agree", "Strongly Agree", "Agree", "Agree", "Neutral", "Strongly Agree", "Agree", "Agree", "Agree", "Agree",
+    "Agree", "Agree", "Neutral", "Strongly Agree", "Strongly Agree", "Strongly Agree", "Strongly Agree", "Disagree",
+    "Strongly Agree", "Agree", "Neutral", "Strongly Disagree", "Strongly Agree", "Strongly Agree", "Neutral", "Agree",
+    "Agree", "Strongly Agree", "Agree", "Agree", "Strongly Agree", "Agree", "Neutral", "Agree", "Agree", "Strongly Agree",
+    "Agree", "Agree", "Strongly Agree", "Agree", "Strongly Agree", "Strongly Agree", "Strongly Agree", "Strongly Agree",
+    "Agree", "Neutral", "Agree", "Disagree", "Agree", "Strongly Agree", "Agree", "Neutral", "Neutral", "Agree",
+    "Strongly Agree", "Strongly Agree", "Neutral", "Agree", "Agree", "Strongly Agree", "Agree", "Neutral", "Agree", "Agree",
+    "Neutral", "Strongly Agree", "Strongly Agree", "Strongly Agree", "Neutral", "Strongly Agree", "Neutral", "Agree",
+    "Neutral", "Strongly Agree", "Neutral", "Agree", "Agree", "Strongly Agree", "Disagree", "Strongly Agree", "Strongly Agree",
+    "Agree", "Strongly Agree", "Agree", "Strongly Disagree", "Neutral", "Strongly Agree", "Neutral", "Strongly Agree",
+    "Agree", "Strongly Agree", "Disagree", "Agree", "Strongly Agree", "Strongly Agree", "Strongly Agree", "Strongly Agree",
+    "Disagree", "Agree", "Agree", "Agree", "Agree", "Strongly Agree", "Agree", "Agree", "Strongly Agree", "Strongly Agree",
+    "Strongly Agree", "Disagree", "Neutral", "Agree", "Strongly Agree", "Strongly Agree", "Strongly Agree", "Agree", "Agree",
+    "Strongly Agree", "Agree", "Agree", "Agree", "Strongly Agree"
+]
+
+frequency_counts = Counter(data)
+
+labels = list(frequency_counts.keys())
+values = list(frequency_counts.values())
+colors = ['gold', 'lightgreen', 'lightcoral', 'lightskyblue']  # Different colors for each category
+
+plt.figure(figsize=(10, 5))
+plt.bar(labels, values, color=colors)
+plt.xlabel('Opinion on Pornography and Increase in Rape Rates')
+plt.ylabel('Number of Responses')
+plt.title('Histogram of Opinions on Pornography and Rape Rates')
+plt.xticks(rotation=45)
+plt.show()
+
+plt.figure(figsize=(8, 8))
+plt.pie(values, labels=labels, autopct='%1.1f%%', colors=colors)
+plt.title('Pie Chart of Opinions on Pornography and Rape Rates')
+plt.show()
+
+Q.11 Do you think pornography contributes to the objectification of specific demographics (e.g., women, LGBTQ+ individuals)?
+
+
+import matplotlib.pyplot as plt
+from collections import Counter
+
+data = [
+    "Strongly Agree", "Agree", "Neutral", "Neutral", "Strongly Agree", "Neutral", "Agree", "Agree", "Neutral", "Agree",
+    "Strongly Agree", "Strongly Agree", "Agree", "Strongly Agree", "Strongly Agree", "Strongly Agree", "Disagree", "Neutral",
+    "Agree", "Agree", "Strongly Agree", "Strongly Agree", "Disagree", "Neutral", "Neutral", "Neutral", "Neutral", "Agree",
+    "Neutral", "Agree", "Agree", "Strongly Agree", "Disagree", "Neutral", "Strongly Agree", "Agree", "Strongly Agree",
+    "Agree", "Agree", "Agree", "Strongly Agree", "Neutral", "Agree", "Neutral", "Strongly Agree", "Agree", "Neutral",
+    "Agree", "Strongly Agree", "Agree", "Agree", "Neutral", "Neutral", "Neutral", "Agree", "Agree", "Agree", "Agree",
+    "Agree", "Strongly Agree", "Agree", "Neutral", "Agree", "Agree", "Neutral", "Neutral", "Neutral", "Strongly Agree",
+    "Strongly Agree", "Neutral", "Agree", "Agree", "Agree", "Strongly Agree", "Neutral", "Strongly Agree", "Agree",
+    "Neutral", "Strongly Disagree", "Agree", "Strongly Agree", "Strongly Agree", "Neutral", "Strongly Agree",
+    "Strongly Agree", "Strongly Agree", "Strongly Agree", "Neutral", "Neutral", "Neutral", "Disagree", "Agree",
+    "Strongly Agree", "Neutral", "Neutral", "Agree", "Agree", "Neutral", "Neutral", "Neutral", "Agree", "Strongly Agree",
+    "Strongly Agree", "Neutral", "Strongly Agree", "Neutral", "Agree", "Agree", "Neutral", "Agree", "Neutral", "Neutral",
+    "Agree", "Neutral", "Agree", "Agree", "Agree", "Strongly Agree", "Agree", "Neutral", "Agree", "Strongly Agree",
+    "Agree", "Strongly Agree", "Agree", "Strongly Agree", "Neutral", "Agree", "Agree", "Strongly Agree", "Neutral",
+    "Agree", "Neutral", "Agree", "Disagree", "Strongly Agree", "Agree", "Neutral", "Neutral", "Strongly Disagree",
+    "Disagree", "Neutral", "Agree", "Agree", "Agree", "Strongly Agree", "Agree", "Agree", "Neutral", "Strongly Agree",
+    "Disagree", "Agree", "Neutral", "Disagree", "Neutral", "Neutral", "Strongly Agree", "Neutral", "Neutral", "Neutral",
+    "Strongly Agree", "Strongly Agree", "Agree", "Strongly Agree"
+]
+
+frequency_counts = Counter(data)
+
+labels = list(frequency_counts.keys())
+values = list(frequency_counts.values())
+colors = ['gold', 'lightgreen', 'lightcoral']  # Different colors for each category
+
+plt.figure(figsize=(10, 5))
+plt.bar(labels, values, color=colors)
+plt.xlabel('Opinion on Pornography Contributing to Objectification')
+plt.ylabel('Number of Responses')
+plt.title('Histogram of Opinions on Pornography and Objectification')
+plt.xticks(rotation=45)
+plt.show()
+
+plt.figure(figsize=(8, 8))
+plt.pie(values, labels=labels, autopct='%1.1f%%', colors=colors)
+plt.title('Pie Chart of Opinions on Pornography and Objectification')
+plt.show()
+
+
+Q.12 Do you think pornography contributes to the erosion of cultural values or traditions regarding sexuality?
+
+import matplotlib.pyplot as plt
+data = [
+    "Strongly Agree", "Agree", "Agree", "Strongly Agree", "Strongly Agree", "Agree", "Agree", "Strongly Agree",
+    "Strongly Agree", "Neutral", "Strongly Agree", "Strongly Agree", "Strongly Agree", "Strongly Agree", "Agree",
+    "Disagree", "Disagree", "Agree", "Agree", "Agree", "Strongly Agree", "Agree", "Agree", "Strongly Agree", "Neutral",
+    "Neutral", "Strongly Agree", "Agree", "Neutral", "Agree", "Agree", "Strongly Agree", "Agree", "Strongly Agree",
+    "Strongly Agree", "Neutral", "Strongly Agree", "Strongly Agree", "Neutral", "Neutral", "Strongly Agree", "Neutral",
+    "Strongly Agree", "Strongly Agree", "Strongly Agree", "Agree", "Strongly Agree", "Neutral", "Strongly Agree", "Agree",
+    "Agree", "Neutral", "Neutral", "Strongly Agree", "Agree", "Strongly Agree", "Disagree", "Agree", "Strongly Agree",
+    "Strongly Agree", "Agree", "Strongly Agree", "Strongly Agree", "Agree", "Agree", "Agree", "Agree", "Strongly Agree",
+    "Strongly Agree", "Neutral", "Strongly Agree", "Agree", "Agree", "Strongly Agree", "Agree", "Strongly Agree", "Agree",
+    "Agree", "Strongly Agree", "Agree", "Strongly Agree", "Strongly Agree", "Strongly Agree", "Strongly Agree",
+    "Strongly Agree", "Strongly Agree", "Agree", "Agree", "Agree", "Agree", "Agree", "Agree", "Strongly Agree", "Agree",
+    "Strongly Agree", "Agree", "Agree", "Strongly Agree", "Agree", "Strongly Agree", "Agree", "Agree", "Strongly Agree",
+    "Agree", "Strongly Agree", "Agree", "Strongly Agree", "Strongly Agree", "Strongly Agree", "Strongly Agree", "Agree",
+    "Neutral", "Agree", "Neutral", "Agree", "Neutral", "Agree", "Strongly Agree", "Strongly Agree", "Agree", "Agree",
+    "Agree", "Strongly Agree", "Strongly Agree", "Strongly Agree", "Strongly Agree", "Agree", "Strongly Disagree", "Agree",
+    "Strongly Agree", "Neutral", "Agree", "Agree", "Neutral", "Agree", "Neutral", "Strongly Agree", "Strongly Agree",
+    "Strongly Agree", "Strongly Agree", "Disagree", "Agree", "Agree", "Agree", "Strongly Agree", "Agree", "Neutral", "Agree",
+    "Neutral", "Strongly Agree", "Strongly Agree", "Agree", "Agree", "Agree", "Disagree", "Agree", "Strongly Agree",
+    "Neutral", "Agree", "Strongly Agree", "Strongly Agree", "Strongly Agree", "Agree", "Strongly Agree"
+]
+frequency_counts = Counter(data)
+
+labels = list(frequency_counts.keys())
+values = list(frequency_counts.values())
+colors = ['gold', 'lightgreen', 'lightcoral']  # Different colors for each category
+
+plt.figure(figsize=(10, 5))
+plt.bar(labels, values, color=colors)
+plt.xlabel('Opinion on Pornography and Cultural Values')
+plt.ylabel('Number of Responses')
+plt.title('Histogram of Opinions on Pornography and Cultural Erosion')
+plt.xticks(rotation=45)
+plt.show()
+
+plt.figure(figsize=(8, 8))
+plt.pie(values, labels=labels, autopct='%1.1f%%', colors=colors)
+plt.title('Pie Chart of Opinions on Pornography and Cultural Erosion')
+plt.show()
+
+
+Q.13 Do you think homosexuality has increased because of pornography?
+
+import matplotlib.pyplot as plt
+
+data = [
+    "Agree", "Agree", "Neutral", "Agree", "Strongly Agree", "Neutral", "Neutral", "Strongly Agree", "Agree", "Disagree",
+    "Agree", "Strongly Agree", "Neutral", "Strongly Disagree", "Neutral", "Agree", "Disagree", "Strongly Agree", "Neutral",
+    "Neutral", "Strongly Agree", "Agree", "Agree", "Strongly Agree", "Agree", "Neutral", "Strongly Agree", "Agree", "Agree",
+    "Agree", "Neutral", "Strongly Agree", "Disagree", "Disagree", "Strongly Agree", "Disagree", "Neutral", "Strongly Agree",
+    "Agree", "Strongly Agree", "Strongly Agree", "Agree", "Strongly Agree", "Neutral", "Strongly Agree", "Neutral", "Agree",
+    "Neutral", "Agree", "Agree", "Agree", "Agree", "Neutral", "Agree", "Strongly Agree", "Agree", "Agree", "Agree",
+    "Strongly Agree", "Strongly Agree", "Disagree", "Agree", "Neutral", "Neutral", "Neutral", "Agree", "Agree", "Agree",
+    "Agree", "Neutral", "Strongly Agree", "Strongly Agree", "Agree", "Strongly Agree", "Agree", "Strongly Agree", "Neutral",
+    "Agree", "Strongly Agree", "Agree", "Neutral", "Agree", "Agree", "Strongly Agree", "Strongly Agree", "Strongly Agree",
+    "Strongly Agree", "Agree", "Agree", "Neutral", "Agree", "Neutral", "Strongly Agree", "Agree", "Agree", "Strongly Agree",
+    "Agree", "Neutral", "Disagree", "Neutral", "Agree", "Strongly Agree", "Strongly Agree", "Agree", "Agree", "Neutral",
+    "Strongly Agree", "Agree", "Strongly Agree", "Strongly Agree", "Neutral", "Neutral", "Agree", "Neutral", "Agree",
+    "Agree", "Neutral", "Strongly Agree", "Strongly Agree", "Agree", "Agree", "Neutral", "Agree", "Strongly Agree", "Neutral",
+    "Strongly Agree", "Disagree", "Strongly Disagree", "Agree", "Strongly Agree", "Disagree", "Strongly Agree", "Agree",
+    "Strongly Agree", "Neutral", "Strongly Agree", "Agree", "Strongly Agree", "Disagree", "Neutral", "Disagree", "Agree",
+    "Agree", "Strongly Agree", "Strongly Agree", "Neutral", "Agree", "Agree", "Neutral", "Neutral", "Strongly Agree", "Agree",
+    "Neutral", "Disagree", "Strongly Disagree", "Neutral", "Strongly Agree", "Agree", "Agree", "Disagree", "Agree", "Disagree",
+    "Neutral", "Neutral"
+]
+
+frequency_counts = Counter(data)
+
+labels = list(frequency_counts.keys())
+values = list(frequency_counts.values())
+colors = ['gold', 'lightgreen', 'lightcoral', 'lightskyblue']  # Different colors for each category
+
+plt.figure(figsize=(10, 5))
+plt.bar(labels, values, color=colors)
+plt.xlabel('Opinion on Pornography Influencing Homosexuality')
+plt.ylabel('Number of Responses')
+plt.title('Histogram of Opinions on Pornography and Homosexuality')
+plt.xticks(rotation=45)
+plt.show()
+plt.figure(figsize=(8, 8))
+plt.pie(values, labels=labels, autopct='%1.1f%%', colors=colors)
+plt.title('Pie Chart of Opinions on Pornography and Homosexuality')
+plt.show()
+
+
+Q.14 Addiction to pornography has alienated the youth from Bengali culture, social development activities and religious practices. Do you agree with this?
+
+
+import matplotlib.pyplot as plt
+
+
+data = [
+    "Strongly Agree", "Agree", "Neutral", "Strongly Agree", "Strongly Agree", "Agree", "Agree", "Strongly Agree",
+    "Strongly Agree", "Strongly Disagree", "Agree", "Neutral", "Agree", "Strongly Agree", "Agree", "Disagree", "Disagree",
+    "Strongly Agree", "Strongly Agree", "Agree", "Strongly Agree", "Agree", "Agree", "Strongly Agree", "Strongly Agree",
+    "Neutral", "Strongly Agree", "Strongly Agree", "Agree", "Strongly Agree", "Strongly Agree", "Strongly Agree", "Neutral",
+    "Strongly Agree", "Strongly Agree", "Neutral", "Strongly Agree", "Agree", "Strongly Agree", "Agree", "Strongly Agree",
+    "Agree", "Strongly Agree", "Disagree", "Strongly Agree", "Disagree", "Strongly Agree", "Disagree", "Neutral", "Agree",
+    "Agree", "Disagree", "Agree", "Strongly Agree", "Agree", "Strongly Agree", "Disagree", "Strongly Agree", "Strongly Agree",
+    "Strongly Agree", "Disagree", "Strongly Agree", "Agree", "Agree", "Disagree", "Strongly Agree", "Agree", "Agree",
+    "Strongly Agree", "Agree", "Strongly Agree", "Agree", "Agree", "Strongly Agree", "Agree", "Strongly Agree", "Agree",
+    "Agree", "Strongly Agree", "Agree", "Disagree", "Agree", "Strongly Agree", "Strongly Agree", "Strongly Agree",
+    "Strongly Agree", "Strongly Agree", "Neutral", "Strongly Agree", "Strongly Agree", "Agree", "Agree", "Strongly Agree",
+    "Agree", "Agree", "Agree", "Agree", "Strongly Agree", "Strongly Agree", "Neutral", "Disagree", "Agree", "Strongly Agree",
+    "Agree", "Strongly Agree", "Disagree", "Strongly Agree", "Strongly Agree", "Strongly Agree", "Strongly Agree", "Neutral",
+    "Neutral", "Agree", "Neutral", "Agree", "Agree", "Agree", "Strongly Agree", "Agree", "Agree", "Neutral", "Strongly Agree",
+    "Strongly Agree", "Strongly Agree", "Strongly Agree", "Strongly Agree", "Agree", "Strongly Disagree", "Neutral",
+    "Strongly Agree", "Neutral", "Agree", "Neutral", "Agree", "Neutral", "Agree", "Strongly Agree", "Strongly Agree",
+    "Strongly Agree", "Strongly Agree", "Disagree", "Agree", "Agree", "Strongly Agree", "Strongly Agree", "Strongly Agree",
+    "Neutral", "Agree", "Neutral", "Disagree", "Strongly Agree", "Agree", "Agree", "Agree", "Strongly Disagree", "Agree",
+    "Strongly Agree", "Neutral", "Agree", "Strongly Agree", "Strongly Agree", "Strongly Agree", "Neutral", "Strongly Disagree"
+]
+
+frequency_counts = Counter(data)
+
+labels = list(frequency_counts.keys())
+values = list(frequency_counts.values())
+colors = ['gold', 'lightblue', 'lightcoral']  # Different colors for each category
+
+plt.figure(figsize=(10, 5))
+plt.bar(labels, values, color=colors)
+plt.xlabel('Responses')
+plt.ylabel('Number of Responses')
+plt.title('Histogram of Opinions on Pornography and Alienation from Bengali Culture')
+plt.xticks(rotation=45)
+plt.show()
+
+plt.figure(figsize=(8, 8))
+plt.pie(values, labels=labels, autopct='%1.1f%%', colors=colors)
+plt.title('Pie Chart of Opinions on Pornography and Alienation from Bengali Culture')
+plt.show()

@@ -1,0 +1,15 @@
+import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
+df = pd.read_csv('/content/Survey on Pornography Dehumanizes people (Responses) - Form Responses 1.csv')
+
+contingency_table = pd.crosstab(df['How frequently do you watch pornography?'], df['Do you think pornography promotes unrealistic expectations about sex and body structure?'])
+plt.figure(figsize=(10, 7))
+sns.heatmap(contingency_table, annot=True, cmap="YlGnBu")
+plt.title('Heatmap of Frequency of Watching Pornography vs Perception of Unrealistic Expectations')
+plt.show()
+
+contingency_table.plot(kind='bar', stacked=True, figsize=(10, 7))
+plt.title('Bar Chart of Frequency of Watching Pornography vs Perception of Unrealistic Expectations')
+plt.ylabel('Number of Respondents')
+plt.show()

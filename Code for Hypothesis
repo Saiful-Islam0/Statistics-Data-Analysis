@@ -1,0 +1,44 @@
+1.Is there a relationship between pornography exposure and changes in sexual behaviors and attitudes in Bangladesh.
+import pandas as pd
+import numpy as np
+from scipy.stats import chi2_contingency
+
+df = pd.read_csv('Survey on Pornography Dehumanizes people (Responses).csv')
+contingency_table = pd.crosstab(df['How frequently do you watch pornography?'], df['Do you think pornography contributes to the erosion of cultural values or traditions regarding sexuality? '])
+chi2, p, dof, expected = chi2_contingency(contingency_table)
+print("Chi-Square Statistic : ",chi2)
+print("P-value : ",p)
+OUTPUT:
+Chi-Square Statistic :  39.75150048232414
+P-value :  0.0008463262591996185
+
+2.What cultural factors influence the perception and impact of pornography in Bangladeshi society?
+import pandas as pd
+import numpy as np
+from scipy.stats import chi2_contingency
+
+df = pd.read_csv('Survey on Pornography Dehumanizes people (Responses).csv')
+contingency_table = pd.crosstab(df['Do you think pornography contributes to the objectification of specific demographics (e.g., women, LGBTQ+ individuals)?'], df['Addiction to pornography has alienated the youth from Bengali culture, social development activities and religious practices. Do you agree with this?'])
+chi2, p, dof, expected = chi2_contingency(contingency_table)
+print("Chi-Square Statistic : ",chi2)
+print("P-value : ",p)
+
+OUTPUT:
+Chi-Square Statistic :  29.915356828506077
+P-value :  0.018446066915134205
+
+
+3.How does pornography consumption correlate with the perception of gender roles and relationships in Bangladesh?
+import pandas as pd
+import numpy as np
+from scipy.stats import chi2_contingency
+
+df = pd.read_csv('Survey on Pornography Dehumanizes people (Responses).csv')
+contingency_table = pd.crosstab(df['How frequently do you watch pornography?'], df['Do you think pornography promotes unrealistic expectations about sex and body structure?'])
+chi2, p, dof, expected = chi2_contingency(contingency_table)
+print("Chi-Square Statistic : ",chi2)
+print("P-value : ",p)
+
+OUTPUT:
+Chi-Square Statistic :  27.746881766237053
+P-value :  0.03389165177810081
